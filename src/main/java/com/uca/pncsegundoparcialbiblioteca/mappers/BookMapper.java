@@ -22,8 +22,11 @@ public class BookMapper {
     }
 
     public Book toEntity(BookRequest request){
-        return Book.builder().title(request.getTitle())
-
-                .build();
+        return Book.builder().title(request.getTitle()).author(request.getAuthor())
+                        .genre(request.getGenre()).isbn(request.getIsbn())
+                        .availableCopies(request.getAvailableCopies())
+                                .publishedDate(request.getPublishedDate())
+                                        .totalCopies(request.getTotalCopies())
+                .description(request.getDescription()).available(request.getAvailable()).build();
     }
 }
